@@ -6,9 +6,9 @@ export interface SaveFileUseCase {
 }
 
 export interface Options {
-    fileContent    : string;
-    fileDestination: string;
-    fileName       : string
+    fileContent     : string;
+    fileDestination?: string;
+    fileName?       : string
 }
 
 export class SaveFile implements SaveFileUseCase {
@@ -19,8 +19,8 @@ export class SaveFile implements SaveFileUseCase {
 
     execute({ 
         fileContent, 
-        fileDestination, 
-        fileName
+        fileDestination = 'outputs', 
+        fileName = 'table'
      }: Options): boolean {
 
          try {
