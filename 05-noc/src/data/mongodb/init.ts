@@ -16,11 +16,11 @@ export class MongoDatabase {
                 dbName: dbName
             })
 
-            console.log('Mongo connected');
-            
+            // console.log('Mongo connected');
+            return true
 
         } catch (error) {
-            throw new Error('Mongo connection error');
+            throw error
         }
     }
 }

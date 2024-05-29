@@ -17,24 +17,30 @@ async function main() {
     })
 
     const prisma = new PrismaClient();
-    const newLog = await prisma.logModel.create({
-        data: {
-            level: 'HIGH',
-            message: 'Test message',
-            origin: 'App.ts'
-        }
-    });
 
-    console.log({ newLog })
-
-  
-    // Server.start();    
+    Server.start();    
 }
 
+// ----------------- PRISMA ------------------------------
 
+    // const newLog = await prisma.logModel.create({
+    //     data: {
+    //         level: 'LOW',
+    //         message: 'Test message',
+    //         origin: 'App.ts'
+    //     }
+    // });
 
+    // console.log({ newLog })
 
+    // const logs = await prisma.logModel.findMany({
+    //     where: {
+    //         level: 'LOW'
+    //     }
+    // })
+    // console.log(logs)
 
+// ----------------- MONGO -------------------------------
   // Crear una coleccion = tables, y un documento = registro
 
     // const newLog = await LogModel.create({

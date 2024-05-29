@@ -33,7 +33,7 @@ export class LogEntity {
         const log = new LogEntity({ 
             message,
             level,
-            createdAt,
+            createdAt: new Date(createdAt),
             origin
         });
 
@@ -43,8 +43,12 @@ export class LogEntity {
     static fromObject = ( object: { [key: string]: any } ):LogEntity => {
 
         const { message, level, origin, createdAt } = object;
+        
         const log = new LogEntity({
-            message, level, origin, createdAt
+            message, 
+            level, 
+            createdAt: new Date(createdAt),
+            origin
         });
 
         return log;
